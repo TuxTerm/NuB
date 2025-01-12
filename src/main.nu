@@ -1,4 +1,9 @@
-open bookmarks.json | lines | where $it =~ '"url"' | parse -r '"url": "(?<url>[^"]+)", "add_date": "(?<add_date>\d+)", "last_modified": "(?<last_modified>\d+)", "title": "(?<title>.+)"' | each { 
+open --raw bookmarks.json | lines | where $it =~ '"url"' | parse -r '
+    "url": "(?<url>[^"]+)",          # Match the URL
+    "add_date": "(?<add_date>\d+)",  # Match the add date
+    "last_modified": "(?<last_modified>\d+)",  # Match the last modified date
+    "title": "(?<title>.+)"          # Match the title
+' | each { 
     echo "Bookmark: $it.title"
     echo "URL: $it.url"
     echo "Added on: $it.add_date"
