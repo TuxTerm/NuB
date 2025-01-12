@@ -1,1 +1,0 @@
-open bookmarks.html | lines | where $it =~ '<A HREF="' | parse -r '<A HREF="(?<url>[^"]+)" ADD_DATE="(?<add_date>\d+)" LAST_MODIFIED="(?<last_modified>\d+)".*>(?<title>.+)</A>' | to json | save bookmarks.json
