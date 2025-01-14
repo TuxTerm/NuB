@@ -1,33 +1,29 @@
-open --raw bookmarks.json | lines | where $it =~ '"url"' | parse -r '
-    "url": "(?<url>[^"]+)",          # Match the URL
-    "add_date": "(?<add_date>\d+)",  # Match the add date
-    "last_modified": "(?<last_modified>\d+)",  # Match the last modified date
-    "title": "(?<title>.+)"          # Match the title
-' | each { 
-    echo "Bookmark: $it.title"
-    echo "URL: $it.url"
-    echo "Added on: $it.add_date"
-    echo "Last modified: $it.last_modified"
-    echo ""
-} 
+def add-bookmark [] {
+  # Input for Title
+  let title = (gum input --prompt "📄 Enter Bookmark Title:" --placeholder "Example Site")
 
-# Initialize the TUI application
-def init_app [] {
-    echo "Welcome to the TUI Bookmark Manager!"
-    echo "Press 'q' to quit."
+  # Input for URL
+  let url = (gum input --prompt "🔗 Enter Bookmark URL:" --placeholder "https://example.com")
+
+  # Input for Tags
+  let tags = (gum input --prompt "🏷️ Enter Tags (comma-separated):" --placeholder "linux, cli, tools" | split row ",")
+
+  # Prepare the bookmark entry
+  let new_bookmark = {
+    title: $title,
+    url: $url,
+    tags: $tags,
+    added: (date now | format date "%Y-%m-%d")
+  }
+
+  # Save to JSON
+  if (not ($"bookmarks.json" | path exists)) {
+    [$new_bookmark] | save bookmarks.json
+  } else {
+    open bookmarks.json | append $new_bookmark | save bookmarks.json
+  }
+
+  print "✅ Bookmark added successfully!"
 }
 
-# Main loop for user interaction
-def main [] {
-    init_app
-    loop {
-        let input = read
-        if $input == 'q' {
-            break
-        }
-        # Handle other user inputs here
-    }
-}
-
-# Start the application
-main
+add-bookmark
