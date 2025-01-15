@@ -3,8 +3,27 @@
     "title": "Google",
     "url": "www.google.com",
     "tags": [
-      "Search engine"
+      "Search",
+      " Essential"
     ],
-    "added": "2025-01-14"
+    "added": "15-01-2025"
+  },
+  {
+    "title": "WhatsApp",
+    "url": "web.whatsapp.com",
+    "tags": [
+      "Social",
+      " Essential"
+    ],
+    "added": "15-01-2025"
+  },
+  {
+    "title": "GitHub",
+    "url": "www.github.com",
+    "tags": [
+      "Version Control",
+      " Git"
+    ],
+    "added": "15-01-2025"
   }
 ]
