@@ -4,7 +4,7 @@
     "url": "www.google.com",
     "tags": [
       "Search",
-      " Essential"
+      "Essential"
     ],
     "added": "15-01-2025"
   },
@@ -13,7 +13,7 @@
     "url": "web.whatsapp.com",
     "tags": [
       "Social",
-      " Essential"
+      "Essential"
     ],
     "added": "15-01-2025"
   },
@@ -22,8 +22,17 @@
     "url": "www.github.com",
     "tags": [
       "Version Control",
-      " Git"
+      "Git"
     ],
     "added": "15-01-2025"
+  },
+  {
+    "title": "BlackBox",
+    "url": "www.blackbox.com",
+    "tags": [
+      "LLM",
+      "Coding"
+    ],
+    "added": "17-01-2025"
   }
 ]
