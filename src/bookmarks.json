@@ -34,5 +34,23 @@
       "Coding"
     ],
     "added": "17-01-2025"
+  },
+  {
+    "title": "Nushell",
+    "url": "www.nushell.sh",
+    "tags": [
+      "CLI",
+      "Shell"
+    ],
+    "added": "17-01-2025"
+  },
+  {
+    "title": "YouTube",
+    "url": "www.youtube.com",
+    "tags": [
+      "Video",
+      "Learning"
+    ],
+    "added": "17-01-2025"
   }
 ]
