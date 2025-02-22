@@ -52,5 +52,15 @@
       "Learning"
     ],
     "added": "17-01-2025"
+  },
+  {
+    "title": "NuShell",
+    "url": "www.nushell.sh",
+    "tags": [
+      "TUI",
+      "Terminal",
+      "Productivity"
+    ],
+    "added": "21-02-2025"
   }
 ]
